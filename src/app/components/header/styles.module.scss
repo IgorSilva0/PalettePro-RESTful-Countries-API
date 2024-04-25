@@ -1,0 +1,21 @@
+$bg-color: #fafafa;
+$txt-color: black;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+  background-color: $bg-color;
+  box-shadow: 0px 0px 5px hsla(0, 0%, 47%, 0.486);
+}
+.title {
+    padding-left: 10vh;
+    color: $txt-color;
+    font-weight: 800;
+}
+.theme{
+    padding-right: 10vh;
+    color: $txt-color;
+    font-weight: 800;
+}
