@@ -1,5 +1,6 @@
 $bg-color: #fafafa;
 $txt-color: black;
+$padding: 10vh;
 
 .header {
   display: flex;
@@ -10,12 +11,12 @@ $txt-color: black;
   box-shadow: 0px 0px 5px hsla(0, 0%, 47%, 0.486);
 }
 .title {
-    padding-left: 10vh;
+    padding-left: $padding;
     color: $txt-color;
     font-weight: 800;
 }
 .theme{
     padding-right: 10vh;
     color: $txt-color;
-    font-weight: 800;
+    font-weight: 700;
 }

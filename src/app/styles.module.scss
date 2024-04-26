@@ -1,8 +1,12 @@
 $font-stack: Helvetica, sans-serif;
 $body-bg-color: rgb(240, 240, 240);
+$padding: 10vh;
 
 .body {
     font-family: $font-stack;
     margin: 0px;
     background-color: $body-bg-color;
+}
+.main {
+    padding: $padding - 5 $padding;
 }

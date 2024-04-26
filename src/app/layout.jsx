@@ -1,6 +1,5 @@
 import styles from './styles.module.scss';
 import Header from "./components/header/header.jsx";
-import Data from './util/data.jsx'
 
 export const metadata = {
   title: "PalettePro-RESTful-Countries-API",
@@ -12,9 +11,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       
       <body className={styles.body}>
+
         <Header/>
-          {children}
-        <Data/>
+        
+        {children}
+
       </body>
       
     </html>
