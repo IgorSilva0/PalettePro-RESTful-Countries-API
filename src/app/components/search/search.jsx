@@ -3,6 +3,12 @@ import {FaMagnifyingGlass, FaArrowLeftLong} from 'react-icons/fa6'
 
 const Search = ({ prop }) => {
 
+    const handleChange = (event) => {
+        const value = event.target.value;
+        prop.setSelectedRegion(value);
+        console.log(value);
+    };
+
     const handleBack = () => {
         prop.setClicked(!prop.clicked)
     }
@@ -16,13 +22,13 @@ const Search = ({ prop }) => {
                     <input type="text" placeholder="Search for a country..." className={styles.input}/>
                 </div>
 
-                <select className={styles.dropDown}>
+                <select className={styles.dropDown} onChange={handleChange}>
                     <option value="" hidden>Filter by Region</option>
-                    <option value="africa">Africa</option>
-                    <option value="america">America</option>
-                    <option value="asia">Asia</option>
-                    <option value="europe">Europe</option>
-                    <option value="oceania">Oceania</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Americas">America</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
                 </select>
             </>
             ) : (<button className={styles.backBtn} onClick={handleBack}><FaArrowLeftLong/> Back</button>)}

@@ -8,10 +8,13 @@ import { fetchData } from './util/data.ts';
 export default function Home() {
   const [data, setData] = useState(null);
   const [clicked, setClicked] = useState(false);
+  const [selectedRegion, setSelectedRegion] = useState(null);
 
   const prop = {
     clicked,
-    setClicked
+    setClicked,
+    selectedRegion,
+    setSelectedRegion
   }
 
   useEffect(() => {

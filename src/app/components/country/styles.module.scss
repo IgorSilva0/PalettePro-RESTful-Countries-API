@@ -1,0 +1,31 @@
+$box-radius: 5px;
+/* Card when cliked */
+.cardContainer {
+    margin-top: 5vh;
+}
+.card {
+    display: flex;
+}
+.cardFlag {
+    width: 65vh;
+    height: 43vh;
+    border-radius: $box-radius;
+}
+.section {
+    padding-left: 10vh;
+    width: 100%;
+    height: 43vh;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 29vh;
+}
+.borders {
+    border: none;
+    box-shadow: 0px 0px 3px hsla(0, 0%, 17%, 0.753);
+    padding: 3px 10px;
+    margin-left: 8px;
+    border-radius: $box-radius;
+}
