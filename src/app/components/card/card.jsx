@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import Country from '../country/country.jsx'
-import Region from '../region/region.jsx'
+
 
 const Card = ({ data, prop }) => {
   const [randomIndexes, setRandomIndexes] = useState([]);
-  const [clickedCardData, setClickedCardData] = useState(null);
 
   useEffect(() => {
     const dataLength = data.length;
@@ -21,33 +20,29 @@ const Card = ({ data, prop }) => {
   }, [data]);
 
   const handClick = (index) => {
-    setClickedCardData(data[index]);
-    console.log(data[index])
+    prop.setClickedCardData(data[index]);
+    //console.log(data[index])
     prop.setClicked(!prop.clicked);
   };
 
   return (
-    !prop.selectedRegion ?
       !prop.clicked ? (
         <div className={styles.container}>
-        {randomIndexes.map((index, key) => (
-          <div key={key} className={styles.cards} onClick={() => handClick(index)}>
-            <img src={data[index].flags.png} alt='Country Flag' className={styles.flag}/>
-            <main className={styles.txtContainer}>
-              <h2>{data[index].name.common}</h2>
-              <p><b>Population:</b> {data[index].population.toLocaleString()}</p>
-              <p><b>Region:</b> {data[index].region}</p>
-              <p><b>Capital:</b> {data[index].capital}</p>
-            </main>
-          </div>
-        ))}
+          {randomIndexes.map((index, key) => (
+            <div key={key} className={styles.cards} onClick={() => handClick(index)}>
+              <img src={data[index].flags.png} alt='Country Flag' className={styles.flag}/>
+              <main className={styles.txtContainer}>
+                <h2>{data[index].name.common}</h2>
+                <p><b>Population:</b> {data[index].population.toLocaleString()}</p>
+                <p><b>Region:</b> {data[index].region}</p>
+                <p><b>Capital:</b> {data[index].capital}</p>
+              </main>
+             </div>
+          ))}
         </div>
         ) : (
-          <Country clickedCardData={clickedCardData} setClickedCardData={setClickedCardData} data={data}/>
-          )
-          : (
-          <Region/>
-        )
+              <Country prop={prop} data={data}/>
+            )
   );
 };
 

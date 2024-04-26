@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 
-const Borders = ({ clickedCardData, setClickedCardData, data }) => {
+const Borders = ({ prop, data }) => {
     const [borderCountries, setBorderCountries] = useState([]);
 
     useEffect(() => {
-        if (clickedCardData.borders) {
-            setBorderCountries(clickedCardData.borders);
+        if (prop.clickedCardData.borders) {
+            setBorderCountries(prop.clickedCardData.borders);
         }
-    }, [clickedCardData.borders]);
+    }, [prop.clickedCardData.borders]);
 
     const handleClick = (element) => {
-        setClickedCardData(element)
+        prop.setClickedCardData(element)
     }
 
     const countries = borderCountries.map(x => {

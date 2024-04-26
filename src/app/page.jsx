@@ -3,18 +3,22 @@ import { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import Search from "./components/search/search.jsx";
 import Card from './components/card/card.jsx';
+import Region from './components/region/region.jsx'
 import { fetchData } from './util/data.ts';
 
 export default function Home() {
   const [data, setData] = useState(null);
   const [clicked, setClicked] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState(null);
+  const [clickedCardData, setClickedCardData] = useState(null);
 
   const prop = {
     clicked,
     setClicked,
     selectedRegion,
-    setSelectedRegion
+    setSelectedRegion,
+    clickedCardData,
+    setClickedCardData
   }
 
   useEffect(() => {
@@ -34,7 +38,9 @@ export default function Home() {
 
       <Search prop={prop}/>
 
-      {data ? <Card data={data} prop={prop}/> : <h4 className={styles.loading}>Loading...</h4>}
+      {!selectedRegion && data ? <Card data={data} prop={prop} />
+        : !selectedRegion ? <h4 className={styles.loading}>Loading...</h4>
+        : <Region data={data} prop={prop} />}
 
     </div>
   );

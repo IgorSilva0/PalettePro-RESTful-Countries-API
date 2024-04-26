@@ -1,39 +1,39 @@
 import Borders from '../borders/borders.jsx'
 import styles from './styles.module.scss'
 
-const Country = ({ clickedCardData, setClickedCardData, data }) => {
+const Country = ({ prop, data }) => {
     return(
         <div className={styles.cardContainer}>
         <div className={styles.card}>
-          <img src={clickedCardData.flags.png} alt='Country Flag' className={styles.cardFlag}/>
+          <img src={prop.clickedCardData.flags.png} alt='Country Flag' className={styles.cardFlag}/>
 
           <section className={styles.section}>
-            <h2>{clickedCardData.name.common}</h2>
+            <h2>{prop.clickedCardData.name.common}</h2>
 
             <div className={styles.info}>
-              {clickedCardData.name.nativeName && (
-                <p><b>Native Name:</b> {Object.values(clickedCardData.name.nativeName)[0]?.common}</p>
+              {prop.clickedCardData.name.nativeName && (
+                <p><b>Native Name:</b> {Object.values(prop.clickedCardData.name.nativeName)[0]?.common}</p>
               )}
-              <p><b>Population:</b> {clickedCardData.population.toLocaleString()}</p>
-              <p><b>Region:</b> {clickedCardData.region}</p>
-              <p><b>Sub Region:</b> {clickedCardData.subregion}</p>
-              <p><b>Capital:</b> {clickedCardData.capital}</p>
-              {clickedCardData.tld ? (
-                <p><b>Top Level Domain:</b> {clickedCardData.tld[0]}</p>
+              <p><b>Population:</b> {prop.clickedCardData.population.toLocaleString()}</p>
+              <p><b>Region:</b> {prop.clickedCardData.region}</p>
+              <p><b>Sub Region:</b> {prop.clickedCardData.subregion}</p>
+              <p><b>Capital:</b> {prop.clickedCardData.capital}</p>
+              {prop.clickedCardData.tld ? (
+                <p><b>Top Level Domain:</b> {prop.clickedCardData.tld[0]}</p>
               ) : (<p><b>Top Level Domain:</b> N\A</p>)}
               
 
-              {clickedCardData.currencies ? (
-                <p><b>Currencies:</b> {Object.values(clickedCardData.currencies)[0]?.name}</p>
+              {prop.clickedCardData.currencies ? (
+                <p><b>Currencies:</b> {Object.values(prop.clickedCardData.currencies)[0]?.name}</p>
               ) : (<p><b>Currencies:</b> N\A</p>)}
 
-              <p><b>Languages:</b> {Object.entries(clickedCardData.languages).map(([key, language], index, array) => (
+              <p><b>Languages:</b> {Object.entries(prop.clickedCardData.languages).map(([key, language], index, array) => (
                 <span key={key}>{language}{index < array.length - 1 && ', '}</span>
               ))}</p>   
             </div>
 
-            {clickedCardData.borders ? (
-              <Borders clickedCardData={clickedCardData} setClickedCardData={setClickedCardData} data={data} />
+            {prop.clickedCardData.borders ? (
+              <Borders prop={prop} data={data} />
             ) : <p><b>Border Countries: </b> N\A</p>} 
 
           </section>              

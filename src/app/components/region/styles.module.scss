@@ -1,0 +1,31 @@
+$box-shadow: 0px 0px 5px hsla(0, 0%, 47%, 0.267);
+$box-radius: 5px;
+$txt-padding: 4vh;
+$bg-color:  #f9f9f9;
+$txt-color: black;
+
+.container {
+    margin-top: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+  
+.cards {
+    max-width: 39vh;
+    border-radius: $box-radius;
+    margin-bottom: 6vh;
+    background-color: $bg-color;
+    box-shadow: $box-shadow;
+}
+  
+.flag {
+    width: 39vh;
+    height: 23vh;
+    border-radius: $box-radius;
+}
+.txtContainer {
+  color: $txt-color;
+  padding: 0 $txt-padding;
+  padding-bottom: 2.5vh;
+}
