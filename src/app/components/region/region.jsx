@@ -10,6 +10,7 @@ const Region = ({ data, prop }) => {
     }, [prop.selectedRegion]);
 
     const handClick = (item) => {
+        prop.setSearching('')
         prop.setClickedCardData(item)
         prop.setSelectedRegion(null);
         prop.setClicked(!prop.clicked);

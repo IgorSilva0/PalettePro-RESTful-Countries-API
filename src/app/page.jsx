@@ -4,6 +4,7 @@ import styles from './styles.module.scss';
 import Search from "./components/search/search.jsx";
 import Card from './components/card/card.jsx';
 import Region from './components/region/region.jsx'
+import Result from './components/search/result/result.jsx'
 import { fetchData } from './util/data.ts';
 
 export default function Home() {
@@ -11,6 +12,8 @@ export default function Home() {
   const [clicked, setClicked] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [clickedCardData, setClickedCardData] = useState(null);
+  const [searching, setSearching] = useState('')
+  const [searchedData, setSearchedData] = useState(null)
 
   const prop = {
     clicked,
@@ -18,7 +21,11 @@ export default function Home() {
     selectedRegion,
     setSelectedRegion,
     clickedCardData,
-    setClickedCardData
+    setClickedCardData,
+    searching,
+    setSearching,
+    searchedData,
+    setSearchedData
   }
 
   useEffect(() => {
@@ -36,10 +43,11 @@ export default function Home() {
   return (
     <div className={styles.main}>
 
-      <Search prop={prop}/>
+      <Search prop={prop} data={data}/>
 
-      {!selectedRegion && data ? <Card data={data} prop={prop} />
-        : !selectedRegion ? <h4 className={styles.loading}>Loading...</h4>
+      {!selectedRegion && data && searching.length < 1 ? <Card data={data} prop={prop} />
+        : !selectedRegion && searching.length < 1 ? <h4 className={styles.loading}>Loading...</h4>
+        : searching.length >= 1 ? <Result prop={prop} data={data}/> 
         : <Region data={data} prop={prop} />}
 
     </div>

@@ -21,6 +21,7 @@ const Card = ({ data, prop }) => {
 
   const handClick = (index) => {
     prop.setClickedCardData(data[index]);
+    prop.setSearching('')
     //console.log(data[index])
     prop.setClicked(!prop.clicked);
   };
