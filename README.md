@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# REST Countries Explorer
 
-## Getting Started
+Welcome to REST Countries Explorer! This project integrates with the REST Countries API to provide comprehensive country data in a user-friendly interface. With features like search, filtering, and detailed information display, users can explore the world with ease.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Homepage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Countries Display: Upon visiting the homepage, users can view 8 random countries fetched from the REST Countries API.
+Search Functionality: Users can search for a specific country using the input field, making it easy to find countries of interest.
+Region Filtering: Countries can be filtered by region, allowing users to narrow down their search based on geographical areas.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 2. Detailed Information
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Country Details Page: Clicking on a country's name leads users to a dedicated page displaying detailed information about that country.
+Border Countries: On the country details page, users can click through to view information about bordering countries, enhancing their understanding of geographical relationships.
 
-## Learn More
+### 3. Responsive Design
 
-To learn more about Next.js, take a look at the following resources:
+Optimal Layout: The interface adapts to the user's device screen size, providing an optimal viewing experience across various devices.
+Hover and Focus States: Interactive elements on the page feature hover and focus states, enhancing usability and accessibility.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Bonus Feature
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Color Scheme Toggle: Users can toggle between light and dark mode, offering a personalized browsing experience.
