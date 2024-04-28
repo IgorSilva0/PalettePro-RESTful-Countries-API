@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
+import Header from "./components/header/header.jsx";
 import Search from "./components/search/search.jsx";
 import Card from './components/card/card.jsx';
 import Region from './components/region/region.jsx'
@@ -12,8 +13,9 @@ export default function Home() {
   const [clicked, setClicked] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [clickedCardData, setClickedCardData] = useState(null);
-  const [searching, setSearching] = useState('')
-  const [searchedData, setSearchedData] = useState(null)
+  const [searching, setSearching] = useState('');
+  const [searchedData, setSearchedData] = useState(null);
+  const [darkMode, setDarkMode] = useState(false)
 
   const prop = {
     clicked,
@@ -25,7 +27,9 @@ export default function Home() {
     searching,
     setSearching,
     searchedData,
-    setSearchedData
+    setSearchedData,
+    darkMode,
+    setDarkMode
   }
 
   useEffect(() => {
@@ -41,15 +45,19 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.main}>
+    <div className={!darkMode ? styles.content : styles.content2}>
+      <Header prop={prop}/>
+      
+      <div className={styles.main}>
 
-      <Search prop={prop} data={data}/>
+        <Search prop={prop} data={data}/>
 
-      {!selectedRegion && data && searching.length < 1 ? <Card data={data} prop={prop} />
-        : !selectedRegion && searching.length < 1 ? <h4 className={styles.loading}>Loading...</h4>
-        : searching.length >= 1 ? <Result prop={prop} data={data}/> 
-        : <Region data={data} prop={prop} />}
+        {!selectedRegion && data && searching.length < 1 ? <Card data={data} prop={prop} />
+          : !selectedRegion && searching.length < 1 ? <h4 className={styles.loading}>Loading...</h4>
+          : searching.length >= 1 ? <Result prop={prop} data={data}/> 
+          : <Region data={data} prop={prop} />}
 
+      </div>
     </div>
   );
 }

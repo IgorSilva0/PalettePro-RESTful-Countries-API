@@ -40,3 +40,18 @@ $box-radius: 6px;
     border-radius: $box-radius;
     background-color: white;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .searchBox{
+        padding: 1.5vh 1.5vh;
+        width: 22vh;
+    }
+    .input{
+        width: 17vh;
+        margin-left: 2vh;
+        font-size: medium;
+        border: none;
+    }
+   
+}

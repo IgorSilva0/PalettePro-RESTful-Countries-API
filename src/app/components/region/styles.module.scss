@@ -29,3 +29,9 @@ $txt-color: black;
   padding: 0 $txt-padding;
   padding-bottom: 2.5vh;
 }
+
+@media only screen and (max-width: 768px) {
+    .container {
+        justify-content: center;
+    }
+}

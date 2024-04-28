@@ -3,7 +3,7 @@ import styles from './styles.module.scss'
 
 const Country = ({ prop, data }) => {
     return(
-        <div className={styles.cardContainer}>
+        <div className={!prop.darkMode? styles.cardContainer : styles.cardContainer2}>
         <div className={styles.card}>
           <img src={prop.clickedCardData.flags.png} alt='Country Flag' className={styles.cardFlag}/>
 

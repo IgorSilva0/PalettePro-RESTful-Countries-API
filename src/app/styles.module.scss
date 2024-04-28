@@ -3,10 +3,25 @@ $body-bg-color: rgb(240, 240, 240);
 $padding: 10vh;
 
 .body {
+    margin: 0px;
+}
+.content{
     font-family: $font-stack;
     margin: 0px;
     background-color: $body-bg-color;
 }
+.content2 {
+    font-family: $font-stack;
+    margin: 0px;
+    background-color: black;
+}
 .main {
     padding: $padding - 5 $padding;
+}
+
+@media only screen and (max-width: 768px) {
+ .main {
+    padding: 2vh;
+ }
+
 }
