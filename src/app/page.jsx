@@ -40,22 +40,23 @@ export default function Home() {
         setData(response);
       })
       .catch((error) => {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching data: API is down... \nUsing another source!');
+        setData(error)
       });
   }, []);
 
   return (
     <div className={!darkMode ? styles.content : styles.content2}>
-      <Header prop={prop}/>
-      
+      <Header prop={prop} />
+
       <div className={styles.main}>
 
-        <Search prop={prop} data={data}/>
+        <Search prop={prop} data={data} />
 
         {!selectedRegion && data && searching.length < 1 ? <Card data={data} prop={prop} />
           : !selectedRegion && searching.length < 1 ? <h4 className={styles.loading}>Loading...</h4>
-          : searching.length >= 1 ? <Result prop={prop} data={data}/> 
-          : <Region data={data} prop={prop} />}
+            : searching.length >= 1 ? <Result prop={prop} data={data} />
+              : <Region data={data} prop={prop} />}
 
       </div>
     </div>
