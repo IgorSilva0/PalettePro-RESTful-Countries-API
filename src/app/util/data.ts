@@ -2,7 +2,7 @@ export async function fetchData(url: string): Promise<any> {
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error('Failed to fetch data **API is DOWN...**');
+            //throw new Error('Failed to fetch data **API is DOWN...**');
         }
         const json = await response.json();
         return json;
